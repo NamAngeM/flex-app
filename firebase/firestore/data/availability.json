@@ -1,0 +1,39 @@
+{
+  "__collection__": {
+    "avail1": {
+      "id": "avail1",
+      "providerId": "user2",
+      "dayOfWeek": 1,
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    "avail2": {
+      "id": "avail2",
+      "providerId": "user2",
+      "dayOfWeek": 2,
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    "avail3": {
+      "id": "avail3",
+      "providerId": "user2",
+      "dayOfWeek": 3,
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    "avail4": {
+      "id": "avail4",
+      "providerId": "user2",
+      "dayOfWeek": 4,
+      "startTime": "09:00",
+      "endTime": "17:00"
+    },
+    "avail5": {
+      "id": "avail5",
+      "providerId": "user2",
+      "dayOfWeek": 5,
+      "startTime": "09:00",
+      "endTime": "17:00"
+    }
+  }
+}

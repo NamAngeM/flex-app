@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Fonctions utilitaires
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isUserAuthenticated(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isProvider() {
+      return isAuthenticated() && 
+        (getUserData().role == 'provider' || getUserData().role == 'UserRole.provider');
+    }
+    
+    function isClient() {
+      return isAuthenticated() && 
+        (getUserData().role == 'client' || getUserData().role == 'UserRole.client');
+    }
+    
+    // Règles pour les utilisateurs
+    match /users/{userId} {
+      // Tout le monde peut créer un compte
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      
+      // Lecture par l'utilisateur lui-même ou par un prestataire
+      allow read: if isUserAuthenticated(userId) || isProvider();
+      
+      // Mise à jour par l'utilisateur lui-même uniquement
+      allow update: if isUserAuthenticated(userId);
+      
+      // Suppression interdite (soft delete recommandé)
+      allow delete: if false;
+    }
+    
+    // Règles pour les catégories
+    match /categories/{categoryId} {
+      // Tout le monde peut lire
+      allow read: if true;
+      
+      // Seuls les prestataires peuvent créer/modifier/supprimer
+      allow write: if isProvider();
+    }
+    
+    // Règles pour les services
+    match /services/{serviceId} {
+      // Tout le monde peut lire
+      allow read: if true;
+      
+      // Seul le prestataire propriétaire peut modifier
+      allow create: if isProvider();
+      allow update, delete: if isProvider() && 
+        resource.data.providerId == request.auth.uid;
+    }
+    
+    // Règles pour les rendez-vous
+    match /bookings/{bookingId} {
+      // Lecture par le client ou le prestataire concerné
+      allow read: if isAuthenticated() && 
+        (resource.data.clientId == request.auth.uid || 
+         resource.data.providerId == request.auth.uid);
+      
+      // Création par un client authentifié
+      allow create: if isClient() && 
+        request.resource.data.clientId == request.auth.uid;
+      
+      // Mise à jour par le client ou le prestataire concerné
+      allow update: if isAuthenticated() && 
+        (resource.data.clientId == request.auth.uid || 
+         resource.data.providerId == request.auth.uid);
+      
+      // Suppression par le propriétaire uniquement
+      allow delete: if isAuthenticated() && 
+        (resource.data.clientId == request.auth.uid || 
+         resource.data.providerId == request.auth.uid);
+    }
+    
+    // Règles pour les disponibilités
+    match /availability/{availabilityId} {
+      // Lecture par tout utilisateur authentifié
+      allow read: if isAuthenticated();
+      
+      // Écriture par le prestataire propriétaire uniquement
+      allow write: if isProvider() && 
+        request.resource.data.providerId == request.auth.uid;
+    }
+    
+    // Règles pour les conversations
+    match /conversations/{conversationId} {
+      // Lecture/écriture par les participants uniquement
+      allow read, write: if isAuthenticated() && 
+        request.auth.uid in resource.data.participants;
+      
+      // Sous-collection de messages
+      match /messages/{messageId} {
+        allow read: if isAuthenticated() && 
+          request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants;
+        
+        allow create: if isAuthenticated() && 
+          request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants &&
+          request.resource.data.senderId == request.auth.uid;
+        
+        allow update: if isAuthenticated() && 
+          request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants;
+      }
+    }
+  }
+}

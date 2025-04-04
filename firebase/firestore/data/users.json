@@ -1,0 +1,22 @@
+{
+  "__collection__": {
+    "user1": {
+      "uid": "user1",
+      "email": "client@example.com",
+      "displayName": "Client Test",
+      "photoURL": "https://ui-avatars.com/api/?name=Client+Test",
+      "phoneNumber": "+33612345678",
+      "role": "client",
+      "createdAt": {"__timestamp__": {"seconds": 1709424000, "nanos": 0}}
+    },
+    "user2": {
+      "uid": "user2",
+      "email": "provider@example.com",
+      "displayName": "Prestataire Test",
+      "photoURL": "https://ui-avatars.com/api/?name=Prestataire+Test",
+      "phoneNumber": "+33687654321",
+      "role": "provider",
+      "createdAt": {"__timestamp__": {"seconds": 1709424000, "nanos": 0}}
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "__collection__": {
+    "appt1": {
+      "id": "appt1",
+      "clientId": "user1",
+      "providerId": "user2",
+      "serviceId": "service1",
+      "date": {"__timestamp__": {"seconds": 1712102400, "nanos": 0}},
+      "startTime": "10:00",
+      "endTime": "10:30",
+      "status": "confirmed",
+      "createdAt": {"__timestamp__": {"seconds": 1709424000, "nanos": 0}}
+    },
+    "appt2": {
+      "id": "appt2",
+      "clientId": "user1",
+      "providerId": "user2",
+      "serviceId": "service3",
+      "date": {"__timestamp__": {"seconds": 1712188800, "nanos": 0}},
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "status": "pending",
+      "createdAt": {"__timestamp__": {"seconds": 1709424000, "nanos": 0}}
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "__collection__": {
+    "category1": {
+      "id": "category1",
+      "name": "Coiffure",
+      "description": "Services de coiffure et soins capillaires",
+      "imageUrl": "https://images.unsplash.com/photo-1560066984-138dadb4c035",
+      "order": 1
+    },
+    "category2": {
+      "id": "category2",
+      "name": "Massage",
+      "description": "Services de massage et relaxation",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874",
+      "order": 2
+    },
+    "category3": {
+      "id": "category3",
+      "name": "Esthétique",
+      "description": "Services de beauté et soins esthétiques",
+      "imageUrl": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8",
+      "order": 3
+    }
+  }
+}

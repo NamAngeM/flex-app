@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "631473048805",
+    "project_id": "flexbookrdv-2a945",
+    "storage_bucket": "flexbookrdv-2a945.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631473048805:android:bff825bb8feafd1578180c",
+        "android_client_info": {
+          "package_name": "com.example.flex_book_rdv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631473048805-rbrgae4gs8hqkuehr86q2v2ev08699d0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flex_book_rdv",
+            "certificate_hash": "35b5a216a5ec220e4570f930588d2a7ce69dfe58"
+          }
+        },
+        {
+          "client_id": "631473048805-igd6f9hivderv7mgafhrot5l0a5sipht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3FfKq9ohhVd4oy7TgxkhMoFCaHwhYMYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631473048805-igd6f9hivderv7mgafhrot5l0a5sipht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

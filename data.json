@@ -1,0 +1,31 @@
+{
+    "hotels": {
+      "hotel_1": { "name": "Hôtel Le Luxe", "location": "Paris", "price": 120, "rating": 4.5 },
+      "hotel_2": { "name": "Grand Palace", "location": "Lyon", "price": 150, "rating": 4.7 },
+      "hotel_3": { "name": "Royal Comfort", "location": "Marseille", "price": 100, "rating": 4.2 },
+      "hotel_4": { "name": "Hôtel Riviera", "location": "Nice", "price": 180, "rating": 4.8 },
+      "hotel_5": { "name": "Parisian Stay", "location": "Paris", "price": 90, "rating": 4.0 }
+    },
+    "restaurants": {
+      "restaurant_1": { "name": "Le Gourmet", "location": "Paris", "type": "Français", "rating": 4.6 },
+      "restaurant_2": { "name": "Bella Italia", "location": "Lyon", "type": "Italien", "rating": 4.3 },
+      "restaurant_3": { "name": "Tokyo Sushi", "location": "Marseille", "type": "Japonais", "rating": 4.7 },
+      "restaurant_4": { "name": "Steakhouse Deluxe", "location": "Bordeaux", "type": "Grill", "rating": 4.5 },
+      "restaurant_5": { "name": "Vegan Paradise", "location": "Nice", "type": "Végétalien", "rating": 4.2 }
+    },
+    "universities": {
+      "university_1": { "name": "Université de Paris", "location": "Paris", "students": 50000, "rank": 1 },
+      "university_2": { "name": "Université de Lyon", "location": "Lyon", "students": 35000, "rank": 2 },
+      "university_3": { "name": "Université Aix-Marseille", "location": "Marseille", "students": 70000, "rank": 3 },
+      "university_4": { "name": "Université de Bordeaux", "location": "Bordeaux", "students": 40000, "rank": 4 },
+      "university_5": { "name": "Université de Nice", "location": "Nice", "students": 30000, "rank": 5 }
+    },
+    "hospitals": {
+      "hospital_1": { "name": "Hôpital Saint-Louis", "location": "Paris", "beds": 1000, "rating": 4.8 },
+      "hospital_2": { "name": "Hôpital de Lyon", "location": "Lyon", "beds": 800, "rating": 4.5 },
+      "hospital_3": { "name": "CHU Marseille", "location": "Marseille", "beds": 1200, "rating": 4.6 },
+      "hospital_4": { "name": "Hôpital de Bordeaux", "location": "Bordeaux", "beds": 900, "rating": 4.4 },
+      "hospital_5": { "name": "Hôpital de Nice", "location": "Nice", "beds": 750, "rating": 4.3 }
+    }
+  }
+  
